@@ -21,6 +21,20 @@ export default function Projects() {
           <li key={p.id}>
             <h3>{p.title}</h3>
             <p>{p.body}</p>
+            {/*
+              OPTIMIZATION: Replace the <img> tag with the Next.js Image component.
+              When mapping over a list of items, image optimization becomes crucial for performance.
+              `next/image` will ensure these images are lazy-loaded and properly sized.
+
+              OPTIMIZED CODE:
+              import Image from 'next/image';
+              <Image
+                src='/images/project-placeholder.png'
+                alt={p.title}
+                width={200}
+                height={200}
+              />
+            */}
             <img src='/images/project-placeholder.png' alt={p.title} style={{ width: "20%" }} />
           </li>
         ))}
